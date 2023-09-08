@@ -1,0 +1,31 @@
+{
+  "name": "tabtest",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "index.js",
+  "author": "jambaa",
+  "license": "MIT",
+  "scripts": {
+    "build": "tsc",
+    "dev": "yarn && yarn build && node ./dist/index.js",
+    "start": "yarn && node ./dist/index.js"
+  },
+  "dependencies": {
+    "@apollo/client": "^3.8.3",
+    "@apollo/server": "^4.9.3",
+    "@types/node": "^20.5.9",
+    "@types/sequelize": "^4.28.15",
+    "bcrypt": "^5.1.1",
+    "dotenv": "^16.3.1",
+    "global": "^4.4.0",
+    "graphql": "^16.8.0",
+    "jsonwebtoken": "^9.0.2",
+    "mysql2": "^3.6.0",
+    "sequelize": "^6.32.1",
+    "sequelize-cli": "^6.6.1",
+    "sequelize-typescript": "^2.1.5",
+    "ts-node": "^10.9.1",
+    "tsc": "^2.0.4",
+    "typescript": "^5.2.2"
+  }
+}
