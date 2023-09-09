@@ -1,4 +1,6 @@
-import { gql } from '@apollo/client';
+import pkg from '@apollo/client';
+const { gql } = pkg;
+
 
 import {
   mutations as userMutations,

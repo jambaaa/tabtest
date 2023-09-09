@@ -2,27 +2,17 @@ import { ApolloServer } from '@apollo/server';
 import { startStandaloneServer } from '@apollo/server/standalone';
 import typeDefs from './schema';
 
-import { User } from './models/user.model';
+import { Users } from './models/user.model';
 import sequelize from './db';
 import resolvers from './resolvers';
+import { hashPassword } from './utils/secret';
 
 (async () => {
   await sequelize.sync({ force: true });
-
-  const admin = await User.create({ username: 'admin', email: 'admin@tabtest.com', password: "pass1234" });
+  const hashedPassword = hashPassword('pass1234'); // TODO: use .env
+  const admin = await Users.create({ username: 'admin', email: 'admin@tabtest.com', password: hashedPassword });
   console.log(admin.toJSON());
 })();
-
-const books = [
-    {
-        title: 'The Awakening',
-        author: 'Kate Chopin',
-    },
-    {
-        title: 'City of Glass',
-        author: 'Paul Auster',
-    },
-];
 
 const server = new ApolloServer({
     typeDefs,

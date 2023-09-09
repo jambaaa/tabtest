@@ -1,34 +1,64 @@
-import { Table, Column, Model } from 'sequelize-typescript';
+import { Table, Column, Model, DataType } from 'sequelize-typescript';
 
 @Table
-export class User extends Model<User> {
-  @Column
+export class Users extends Model<Users> {
+  @Column({
+    type: DataType.STRING,
+    allowNull: true,
+  })
   username: string;
 
-  @Column
+  @Column({
+    type: DataType.STRING,
+    allowNull: false,
+  })
   email: string;
 
-  @Column
+  @Column({
+    type: DataType.STRING,
+    allowNull: true,
+  })
   phone: string;
 
-  @Column
+  @Column({
+    type: DataType.STRING,
+    allowNull: true,
+  })
   address: string;
 
-  @Column
-  birthDate: Date;
+  @Column({
+    type: DataType.STRING,
+    allowNull: true,
+  })
+  birthDate: string;
 
-  @Column
+  @Column({
+    type: DataType.BOOLEAN,
+    allowNull: true,
+  })
   gender: boolean;
 
-  @Column
+  @Column({
+    type: DataType.DATE,
+    allowNull: true,
+  })
   role: string;
   
-  @Column
+  @Column({
+    type: DataType.STRING,
+    allowNull: true,
+  })
   password: string;
 
-  @Column
+  @Column({
+    type: DataType.STRING,
+    allowNull: true,
+  })
   rest_token: string;
 
-  @Column
+  @Column({
+    type: DataType.DATE,
+    allowNull: true,
+  })
   rest_token_expires: Date;
 }

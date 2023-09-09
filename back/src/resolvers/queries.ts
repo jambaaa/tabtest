@@ -1,10 +1,11 @@
-import { User } from "../models/user.model";
+import sequelize from "../db";
+import { Users } from "../models/user.model";
 
 export const Query = {
     getUsers: {
-        user: async () => {
-            const users = await User.findAll();
-            return users;
+        resolve: async () => {
+            const users = await Users.findAll();
+            return { list: users };
         },
     }
 }

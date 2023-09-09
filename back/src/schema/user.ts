@@ -9,9 +9,9 @@ export const types = `
         _id: String
         name: String
         email: String
-        phone: Number
+        phone: String
         address: String
-        birthDate: Date
+        birthDate: String
         gender: Boolean
         role: String
     }
@@ -23,20 +23,10 @@ export const types = `
 `;
 
 export const queries = `
-    users(searchValue: String, perPage: Int, page: Int): UserListResponse
-    userDetail(_id: String!): User
-    permissions: JSON
-`;
-
-const mutationParams = `
-    email: String,
+    getUsers(searchValue: String, perPage: Int, page: Int): UserListResponse
 `;
 
 export const mutations = `
-    login(email: String, password: String): String
-    logout: String
-    usersAdd(${mutationParams}, password: String): User
-    usersEdit(_id: String!, ${mutationParams}): User
-    usersChangePassword(currentPassword: String, newPassword: String): User
-    usersRemove(_id: String!): DeleteResponse
+    signupUser(email: String, password: String): User
+    login(email: String, password: String): User
 `;

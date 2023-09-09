@@ -19,4 +19,7 @@
         npx sequelize-cli migration:generate --name initial_migration
 
 2. Fill generated migration file
-3. 
+3. Do migrate using command below
+
+    command:
+        npx sequelize-cli db:migrate
